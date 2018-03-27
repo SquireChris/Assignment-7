@@ -1,0 +1,215 @@
+/******************************************************************************
+ * AUTHOR     : Chris Burrell
+ * STUDENT ID : 1009369,
+ * ASSIGNMENT : #7 New Salary
+ * CLASS      : CS1A
+ * SECTION    : MW: 8am
+ * DUE DATE   : 3/14/18
+ *****************************************************************************/
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+/******************************************************************************
+ * (Title and overall description of the project)
+ * ---------------------------------------------------------------------------/
+ * AUTHOR     : Chris Burrell
+ * STUDENT ID : 1009369,
+ * ASSIGNMENT : #7 Repetition and Selection
+ * CLASS      : CS1A
+ * SECTION    : MW: 8am
+ * DUE DATE   : 3/28/18
+ *****************************************************************************/
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+/******************************************************************************
+ * (Title and overall description of the project)
+ * ----------------------------------------------------------------------------
+ * This program will ...
+ * ----------------------------------------------------------------------------
+ * INPUT:
+ * 		<>
+ *
+ * OUTPUT:
+ * 		<>
+ *****************************************************************************/
+
+int main(){
+
+	/**************************************************************************
+	 * CONSTANTS
+	 * ------------------------------------------------------------------------
+	 * OUTPUT - USED FOR CLASS HEADING
+	 *-------------------------------------------------------------------------
+	 *PROGRAMMER[] : Programmer's Name
+	 *CLASS[]      : Student's Course
+	 *SECTION[]    : Class Days and Times
+	 *LAB_NUM      : Lab Number (specific to this Lab / Assignment)
+	 *LAB_NAME[]   : Title of the Lab / Assignment
+	 *************************************************************************/
+
+
+	const char PROGRAMMER[] = "Chris Burrell";
+	const char CLASS[]      = "CS1A";
+	const char 	SECTION[]   = "MW: 8:00 am";
+	const int LAB_NUM       = 7;
+	const char LAB_NAME[]   = "Repetition & Selection";
+
+
+	char grade;
+	int enterCount;
+	double gradeCount;
+	int testCount;
+	double totalGradepnt;
+	double gpa;
+
+
+
+
+
+	//OUTPUT the class heading
+	cout << left;
+	cout << "***********************************************************\n";
+	cout << "*  PROGRAMMED BY : " << PROGRAMMER << endl;
+	cout << "*  "     << setw(14) << "CLASS"    << ": " << CLASS    << endl;
+	cout << "*  "     << setw(14) << "SECTION"  << ": " << SECTION  << endl;
+	cout << "*  Assignment #"<< setw(2) << LAB_NUM  << ": "<< LAB_NAME << endl;
+	cout << "************************************************************\n\n";
+	cout << right;
+
+
+
+
+
+
+
+	enterCount = 1;
+
+
+	/**************************************************************************
+	 	 * INPUT -
+	 *************************************************************************/
+		 for(testCount = 1; testCount <= 3; testCount = testCount + 1)
+		 {
+
+
+
+
+
+		cout << left;
+		cout << "TEST CASE " << "# " << testCount << ": " << endl;
+		cout << right;
+		cout << setw(24);
+		cout << "Enter Letter Grade #" << enterCount << ": ";
+		cin.get(grade);
+		cin.ignore(1000,'\n');
+		grade = toupper(grade);
+
+
+
+	/**************************************************************************
+	 	 * PROCESSING -
+	 *************************************************************************/
+
+
+		enterCount = 1;
+		gradeCount = 0;
+		totalGradepnt = 0;
+		while(grade == 'A' ||
+		      grade == 'B' ||
+		      grade == 'C' ||
+		      grade == 'D' ||
+		      grade == 'F')
+		{
+
+
+
+			if(grade == 'A')
+			{
+			totalGradepnt = totalGradepnt + 4;
+			gradeCount = gradeCount + 1;
+			enterCount = enterCount + 1;
+			}
+			else if(grade == 'B')
+			{
+			totalGradepnt = totalGradepnt + 3;
+			gradeCount = gradeCount + 1;
+			enterCount = enterCount + 1;
+			}
+			else if(grade == 'C')
+			{
+			totalGradepnt = totalGradepnt + 2;
+			gradeCount = gradeCount + 1;
+			enterCount = enterCount + 1;
+			}
+			else if(grade == 'D')
+			{
+			totalGradepnt = totalGradepnt + 1;
+			gradeCount = gradeCount + 1;
+			enterCount = enterCount + 1;
+			}
+			else if(grade == 'F')
+			{
+			totalGradepnt = totalGradepnt + 0;
+			gradeCount = gradeCount + 1;
+			enterCount = enterCount + 1;
+			}
+			else
+			{
+			totalGradepnt = totalGradepnt + 0;
+			enterCount = enterCount + 1;
+
+			} // end if
+
+
+
+		cout << right;
+		cout << setw(24);
+		cout << "Enter Letter Grade #" << enterCount << ": ";
+		cin.get(grade);
+		cin.ignore(1000,'\n');
+		grade = toupper(grade);
+
+		enterCount = 1;
+
+		} // end while
+
+		gpa = totalGradepnt / gradeCount;
+
+		cout << endl;
+		cout << "Total Grade Points: " << totalGradepnt << endl;
+		cout << setprecision(2) << fixed;
+		cout << "GPA: " << gpa;
+		cout << endl << endl;
+
+		 } // end for
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	/**************************************************************************
+	 	 * OUTPUT -
+	 *************************************************************************/
+
+
+
+
+
+
+	return 0;
+}
